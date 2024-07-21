@@ -1,6 +1,12 @@
 <?php
+
+
+namespace com\leoFountas\currecyConverter\dao;
+
 require_once(__DIR__ . "/DAO.php");
 require_once(__DIR__ . "/../model/CurrencyModel.php");
+
+use com\leoFountas\currecyConverter\model\CurrencyModel;
 
 class CurrencyDAO extends DAO
 {
@@ -23,7 +29,7 @@ class CurrencyDAO extends DAO
         return $currencyList;
     }
 
-    function convertIntoModel(array $row ): CurrencyModel
+    function convertIntoModel(array $row): CurrencyModel
     {
 
         $model = new CurrencyModel();

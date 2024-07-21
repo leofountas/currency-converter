@@ -1,4 +1,7 @@
 <?php
+
+namespace com\leoFountas\currecyConverter\model;
+
 class CurrencyModel
 {
 

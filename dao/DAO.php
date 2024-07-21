@@ -1,4 +1,9 @@
 <?php
+
+namespace com\leoFountas\currecyConverter\dao;
+
+use mysqli, mysqli_result;
+
 class DAO
 {
     private string $servername = "localhost";

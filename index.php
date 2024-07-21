@@ -1,47 +1,38 @@
 <?php
-require_once("dao/CurrencyDAO.php");
+
+namespace com\leoFountas\currecyConverter;
+
+
 require_once("utils/CurrencyUtil.php");
 
-$currencyDao = new CurrencyDAO();
-$allCurrency = ($currencyDao->findAllCurrency());
-
+use com\leoFountas\currecyConverter\util\CurrencyUtil;
 
 ?>
 
 <!DOCTYPE html>
 <html>
+<?php
 
-<head></head>
+include("template-parts/header.php");
+
+?>
 
 <body>
 
     <?php
 
-    if (isset($_POST["currency"]) && isset($_POST["amount"])) {
+    if (isset($_POST["currency_from"]) && isset($_POST["currency_to"]) && isset($_POST["amount"])) {
         echo "todo convert";
-        echo "<pre>";
-        print_r(CurrencyUtil::convert($_POST["currency"], $_POST["amount"]));
-        echo "</pre>";
-        //todo curl
+        print_r(CurrencyUtil::convert($_POST["currency_from"], $_POST["currency_to"], $_POST["amount"]));
         echo '<a href="" > back to form </a>';
     } else {
-    ?>
-        <form method="post">
-            <input name="amount" type="number" step="0.01" min="0.01" placeholder="Amount in €">
-            <select name="currency" id="">
-                <?php
-                foreach ($allCurrency as $currency) {
-                    echo '<option value="' . $currency->getCurrencyCode() . '">' . $currency->getCountry() . '</option>';
-                }
-                ?>
-            </select>
-
-            <input type="submit" value="Convert">
-        </form>
-    <?php
+        include("template-parts/form.php");
     }
+
+    include("template-parts/footer.php");
     ?>
 
 </body>
+
 
 </html>
