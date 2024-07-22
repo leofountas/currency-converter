@@ -3,6 +3,6 @@
 namespace com\leoFountas\currecyConverter\templateParts;
 ?>
 
-<head>
-    <title>Currency converter</title>
-</head>
+<header>
+    <h1>Currency Coverter</h1>
+</header>

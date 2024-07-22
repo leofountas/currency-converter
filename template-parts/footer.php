@@ -4,6 +4,6 @@ namespace com\leoFountas\currecyConverter\templateParts;
 ?>
 
 <footer>
-
-    © Leo
+<p>© Leo</p>
+    
 </footer>

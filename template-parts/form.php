@@ -12,16 +12,18 @@ $allCurrency = ($currencyDao->findAllCurrency());
 
 ?>
 <form method="post">
-    <input name="amount" type="number" step="0.01" min="0.01" placeholder="Amount in €">
-    <select name="currency_from" id="">
+    <input name="amount" type="number" step="0.01" min="0.01" placeholder="Amount">
+    <label for="country-from">from</label>
+    <select name="currency_from" id="country-from">
         <?php
         foreach ($allCurrency as $currency) {
             echo '<option value="' . $currency->getCurrencyCode() . '">' . $currency->getCountry() . '</option>';
         }
         ?>
     </select>
-
-    <select name="currency_to" id="">
+        
+    <label for="country-to">to</label>
+    <select name="currency_to" id="country-to">
         <?php
         foreach ($allCurrency as $currency) {
             echo '<option value="' . $currency->getCurrencyCode() . '">' . $currency->getCountry() . '</option>';
